@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        JavaCodeAnalyzer classUnderTest = new JavaCodeAnalyzer();
+    @Test void appTestOrders() {
+        OrderTracker classUnderTest = new OrderTracker();
         //assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 }
