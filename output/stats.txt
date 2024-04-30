@@ -1,0 +1,28 @@
+Stats:
++--------------------------------+-------+
+| Statistic                      | Count |
++--------------------------------+-------+
+| Classes                        | 3     |
+| Methods                        | 8     |
+| Statements                     | 37    |
+| Imports                        | 2     |
+| Fields                         | 3     |
+| Constructors                   | 2     |
+| Interfaces                     | 0     |
+| Enums                          | 0     |
+| Annotations                    | 0     |
+| Comments                       | 0     |
+| If Statements                  | 1     |
+| For Loops                      | 0     |
+| While Loops                    | 0     |
+| Try-Catch Blocks               | 0     |
+| Switch Statements              | 0     |
+| Lambda Expressions             | 0     |
+| Method References              | 0     |
+| Assert Statements              | 0     |
+| Synchronized Blocks            | 0     |
+| Throw Statements               | 0     |
+| Generics                       | 0     |
+| Annotation Uses                | 0     |
+| Inner Classes                  | 0     |
++--------------------------------+-------+

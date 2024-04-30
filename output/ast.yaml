@@ -1,0 +1,553 @@
+---
+root(Type=CompilationUnit): 
+    packageDeclaration(Type=PackageDeclaration): 
+        name(Type=Name): 
+            identifier: "parser"
+            qualifier(Type=Name): 
+                identifier: "org"
+    imports: 
+        - import(Type=ImportDeclaration): 
+            isAsterisk: "false"
+            isStatic: "false"
+            name(Type=Name): 
+                identifier: "ArrayList"
+                qualifier(Type=Name): 
+                    identifier: "util"
+                    qualifier(Type=Name): 
+                        identifier: "java"
+        - import(Type=ImportDeclaration): 
+            isAsterisk: "false"
+            isStatic: "false"
+            name(Type=Name): 
+                identifier: "List"
+                qualifier(Type=Name): 
+                    identifier: "util"
+                    qualifier(Type=Name): 
+                        identifier: "java"
+    types: 
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "Order"
+            members: 
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "orderId"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "status"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=ConstructorDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "orderId"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "orderId"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "status"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "status"
+                    name(Type=SimpleName): 
+                        identifier: "Order"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "orderId"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "status"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "orderId"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getOrderId"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "status"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getStatus"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "status"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "status"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setStatus"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "status"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "OrderTracker"
+            members: 
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "orders"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "List"
+                                typeArguments: 
+                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                        name(Type=SimpleName): 
+                                            identifier: "Order"
+                - member(Type=ConstructorDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "orders"
+                                    value(Type=ObjectCreationExpr): 
+                                        type(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "ArrayList"
+                    name(Type=SimpleName): 
+                        identifier: "OrderTracker"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "orders"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "List"
+                        typeArguments: 
+                            - typeArgument(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Order"
+                    name(Type=SimpleName): 
+                        identifier: "getOrders"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "Order"
+                                                arguments: 
+                                                    - argument(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "orderId"
+                                                    - argument(Type=StringLiteralExpr): 
+                                                        value: "Pending"
+                                            name(Type=SimpleName): 
+                                                identifier: "newOrder"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Order"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "add"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "orders"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "newOrder"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "println"
+                                    scope(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "out"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "System"
+                                    arguments: 
+                                        - argument(Type=BinaryExpr): 
+                                            operator: "PLUS"
+                                            left(Type=BinaryExpr): 
+                                                operator: "PLUS"
+                                                left(Type=StringLiteralExpr): 
+                                                    value: "Order "
+                                                right(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "orderId"
+                                            right(Type=StringLiteralExpr): 
+                                                value: " created successfully."
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "createOrder"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "orderId"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=MethodCallExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "equals"
+                                                scope(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "getOrderId"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "order"
+                                                arguments: 
+                                                    - argument(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "orderId"
+                                            thenStmt(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=ExpressionStmt): 
+                                                        expression(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "setStatus"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "order"
+                                                            arguments: 
+                                                                - argument(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "newStatus"
+                                                    - statement(Type=ExpressionStmt): 
+                                                        expression(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "println"
+                                                            scope(Type=FieldAccessExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "out"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "System"
+                                                            arguments: 
+                                                                - argument(Type=BinaryExpr): 
+                                                                    operator: "PLUS"
+                                                                    left(Type=BinaryExpr): 
+                                                                        operator: "PLUS"
+                                                                        left(Type=BinaryExpr): 
+                                                                            operator: "PLUS"
+                                                                            left(Type=StringLiteralExpr): 
+                                                                                value: "Order "
+                                                                            right(Type=NameExpr): 
+                                                                                name(Type=SimpleName): 
+                                                                                    identifier: "orderId"
+                                                                        right(Type=StringLiteralExpr): 
+                                                                            value: " status updated to "
+                                                                    right(Type=NameExpr): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "newStatus"
+                                                    - statement(Type=ReturnStmt): 
+                                iterable(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "orders"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "order"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Order"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "println"
+                                    scope(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "out"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "System"
+                                    arguments: 
+                                        - argument(Type=BinaryExpr): 
+                                            operator: "PLUS"
+                                            left(Type=BinaryExpr): 
+                                                operator: "PLUS"
+                                                left(Type=StringLiteralExpr): 
+                                                    value: "Order "
+                                                right(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "orderId"
+                                            right(Type=StringLiteralExpr): 
+                                                value: " not found."
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "updateOrderStatus"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "orderId"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "newStatus"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "println"
+                                    scope(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "out"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "System"
+                                    arguments: 
+                                        - argument(Type=StringLiteralExpr): 
+                                            value: "All Orders:"
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=ExpressionStmt): 
+                                            expression(Type=MethodCallExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "println"
+                                                scope(Type=FieldAccessExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "out"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "System"
+                                                arguments: 
+                                                    - argument(Type=BinaryExpr): 
+                                                        operator: "PLUS"
+                                                        left(Type=BinaryExpr): 
+                                                            operator: "PLUS"
+                                                            left(Type=BinaryExpr): 
+                                                                operator: "PLUS"
+                                                                left(Type=StringLiteralExpr): 
+                                                                    value: "Order ID: "
+                                                                right(Type=MethodCallExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "getOrderId"
+                                                                    scope(Type=NameExpr): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "order"
+                                                            right(Type=StringLiteralExpr): 
+                                                                value: ", Status: "
+                                                        right(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "getStatus"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "order"
+                                iterable(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "orders"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "order"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Order"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "displayOrders"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "Main"
+            members: 
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "OrderTracker"
+                                            name(Type=SimpleName): 
+                                                identifier: "tracker"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "OrderTracker"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "createOrder"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "tracker"
+                                    arguments: 
+                                        - argument(Type=StringLiteralExpr): 
+                                            value: "ORD001"
+                                comment(Type=LineComment): 
+                                    content: " Create some orders"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "createOrder"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "tracker"
+                                    arguments: 
+                                        - argument(Type=StringLiteralExpr): 
+                                            value: "ORD002"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateOrderStatus"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "tracker"
+                                    arguments: 
+                                        - argument(Type=StringLiteralExpr): 
+                                            value: "ORD001"
+                                        - argument(Type=StringLiteralExpr): 
+                                            value: "Shipped"
+                                comment(Type=LineComment): 
+                                    content: " Update status of an order"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "displayOrders"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "tracker"
+                                comment(Type=LineComment): 
+                                    content: " Display all orders"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "main"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                        - modifier(Type=Modifier): 
+                            keyword: "STATIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "args"
+                            type(Type=ArrayType): 
+                                origin: "TYPE"
+                                componentType(Type=ClassOrInterfaceType): 
+                                    name(Type=SimpleName): 
+                                        identifier: "String"
+            modifiers: 
+                - modifier(Type=Modifier): 
+                    keyword: "PUBLIC"
+...
