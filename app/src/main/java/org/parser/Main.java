@@ -32,6 +32,10 @@ class OrderTracker {
         orders = new ArrayList<>();
     }
 
+    public List<Order> getOrders() {
+        return this.orders;
+    }
+    
     public void createOrder(String orderId) {
         Order newOrder = new Order(orderId, "Pending");
         orders.add(newOrder);
