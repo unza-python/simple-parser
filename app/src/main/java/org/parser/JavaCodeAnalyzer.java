@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.Node;
 import com.github.javaparser.printer.PrettyPrinter;
 import com.github.javaparser.printer.configuration.imports.*;
 import com.github.javaparser.printer.configuration.PrettyPrinterConfiguration;
@@ -147,6 +150,33 @@ public class JavaCodeAnalyzer {
 
             try {
 
+
+                Map<String, Integer> tokenCounts = new HashMap();
+                cu.walk(Node.TreeTraversal.PREORDER, currentNode -> {
+                    currentNode.getTokenRange().ifPresent(tokenRange -> {
+                        tokenRange.forEach(token -> {
+                            String tokenType = token.getCategory().name();
+                            tokenCounts.put(tokenType, tokenCounts.getOrDefault(tokenType, 0) + 1);
+                        });
+                    });
+                });
+             
+
+                int totalCounts = 0;
+
+                for (int i : tokenCounts.values()) {
+                    totalCounts += i;
+                }
+                
+                writer.write("+--------------------------------+-------+\n");
+                writer.write("| Auto Labeled                            \n");
+                writer.write("+--------------------------------+-------+\n");
+                writer.write( tokenCounts.toString() +"\n");
+
+                writer.write("+--------------------------------+-------+\n");
+                writer.write("| Total                            "+ totalCounts + "\n");
+                writer.write("+--------------------------------+-------+\n");
+
                 String format = "| %-30s | %-5d |\n";
                 writer.write("+--------------------------------+-------+\n");
                 writer.write("| Statistic                      | Count |\n");
@@ -180,5 +210,7 @@ public class JavaCodeAnalyzer {
             }
 
         }
+
+ 
     }
 }
